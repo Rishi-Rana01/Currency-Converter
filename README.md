@@ -1,5 +1,5 @@
 Currency Converter
-🔗 Link : https://currencyconverterapp-30dbf.firebaseapp.com/
+🔗 Link : https://currencyconverterapp-30dbf.firebaseapp.com
 
 A simple web-based currency converter application that allows users to convert amounts between different currencies using real-time exchange rates. The application features a modern UI with flag icons for currencies, conversion history stored in Firebase, and responsive design.
 Features
