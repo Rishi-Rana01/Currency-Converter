@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</head>
+
+<body>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  import {
+    getDatabase,
+    ref,
+    push,
+    onValue
+  } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDib2t7Kt2Lnbl_g68gtVEujevxT5BpMX4",
+    authDomain: "currencyconverterapp-30dbf.firebaseapp.com",
+    databaseURL: "https://currencyconverterapp-30dbf-default-rtdb.firebaseio.com/",
+    projectId: "currencyconverterapp-30dbf",
+    storageBucket: "currencyconverterapp-30dbf.appspot.com",
+    messagingSenderId: "197415552322",
+    appId: "1:197415552322:web:e1a845457422e6cae6b4db"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // ✅ Make Firebase functions accessible in App.js
+  window.firebaseDB = db;
+  window.firebaseRef = ref;
+  window.firebasePush = push;
+  window.firebaseOnValue = onValue;
+</script>
+
+
+  
+</script>
+    <div class="container">
+        <h2>Currency Converter</h2>
+        <form>
+            <div class="amount">
+                <p>Enter Amount</p>
+                <input type="text" placeholder="Enter amount......">
+            </div>
+            <div class="dropdown">
+                <div class="from">
+                    <p>From</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="" srcset="">
+                        <select name="from" id="from">
+                        </select>
+                    </div>
+                </div>
+                <div class="exchange-icon">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </div>
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/IN/flat/64.png" alt="" srcset="">
+                        <select name="to" id="to">
+                    </select>
+                </div>
+            </div>
+            </div>
+            <div class="msg">1 USD = 85.89 INR</div>
+            <div class="result"></div>
+            <button>Get Exchange Rate</button>
+            <div class="history"></div>
+
+        </form>
+    </div>
+    <script src="codes.js"></script>
+    <script src="App.js"></script>
+</body>
+
+</html>
